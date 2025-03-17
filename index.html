@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfoliowithmediaqueries</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+
+
+
+        /* #962E2A, #E3867D, #CEE6F2 */
+
+        body {
+            margin: 0 auto;
+            max-width: 1366px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            font-family: mulish;
+        }
+
+
+        #homeme {
+            scroll-margin-top: 150px;
+        }
+
+        #aboutme {
+            scroll-margin-top: 140px;
+        }
+
+        #skillsme {
+            scroll-margin-top: 200px;
+        }
+
+        #projectsme {
+            scroll-margin-top: 250px;
+        }
+
+        #contactsme {
+            scroll-margin-top: 120px;
+        }
+
+        /* for full width navbar - below */
+        /* .title {
+            margin-top: 5px;
+            line-height: 35px;
+            font-weight: 600;
+            font-size: x-large;
+            font-family: poppins;
+            margin-left: 65px;
+            color: #666666;
+            }
+            
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f7f7f7;
+            box-shadow: 0px 2px 4px 0px rgb(206, 206, 206);
+        }
+
+        .ul ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            font-size: 17px;
+            margin-right: 40px;
+            font-weight: 400;
+        } */
+
+        /* for circular navbar - below */
+        .title {
+            margin-top: 5px;
+            line-height: 33px;
+            font-weight: 600;
+            font-size: 22px;
+            font-family: poppins;
+            margin-left: 45px;
+            color: #666666;
+        }
+
+        nav {
+            border-radius: 20px;
+            margin: 0 auto;
+            max-width: 90vw;
+            position: sticky;
+            top: 19px;
+            z-index: 10;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f7f7f7;
+            box-shadow: 0px 0px 5px 2px rgb(206, 206, 206);
+        }
+
+        .ul ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            font-size: 17px;
+            margin-right: 40px;
+            font-weight: 400;
+        }
+
+        .ul li::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            height: 1px;
+            width: 100%;
+            left: 0;
+            background-color: black;
+            transition: transform 0.3s ease-in-out;
+            transform: scale(0);
+        }
+
+        .ul li:hover::after {
+            transform: scale(1);
+        }
+
+        .ul {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+            /* margin-top: 50px; */
+        }
+
+        .ul li {
+            /* position: relative; */
+            transition: transform 0.2s;
+        }
+
+        .ul li:hover {
+            color: #666666;
+            transform: scale(1.1);
+        }
+
+        /* .sign {
+            font-size: 15px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        } */
+
+        .in {
+            color: rgb(85, 26, 139) !important;
+            font-weight: 600;
+            border: 1px solid gray;
+            border-radius: 20px;
+            padding: 5px 10px;
+            margin-right: 25px;
+            transition: transform 0.2s ease;
+        }
+
+        .in:hover {
+            transform: scale(1.1);
+        }
+
+        .up:hover {
+            transform: scale(1.1);
+        }
+
+        .up {
+            color: rgb(85, 26, 139) !important;
+            font-weight: 600;
+            border: 1px solid gray;
+            border-radius: 20px;
+            padding: 5px 12px;
+            /* margin-right: 50px; */
+            transition: transform 0.2s ease;
+        }
+
+        .logo {
+            height: 200px;
+            margin-left: 30px;
+            /* margin-top: -20px; */
+        }
+
+        .wrapper {
+            display: inline-flex;
+            margin-left: 130px;
+            margin-top: 85px;
+            align-items: baseline;
+            transition: box-shadow 0.2s ease;
+            justify-content: end;
+        }
+
+        .wrapper:hover {
+            box-shadow: 0px 2px 4px 0px rgb(230, 230, 230);
+        }
+
+        .dynamic {
+            list-style: none;
+            margin-left: 15px;
+            font-size: 40px;
+            font-weight: 600;
+            height: 50px;
+            line-height: 50px;
+            overflow: hidden;
+        }
+
+        .static {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 40px;
+            color: #ff3e29;
+        }
+
+        .dynamic li {
+            position: relative;
+            top: 0;
+            height: 50px;
+            animation: slide 16s steps(4) infinite;
+        }
+
+        @keyframes slide {
+            100% {
+                top: -200px;
+            }
+        }
+
+        .dynamic span {
+            position: relative;
+            color: #0f6ead;
+            font-weight: 700;
+        }
+
+        .dynamic span::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border-left: 2px solid black;
+            animation: typing 2s steps(12) infinite alternate;
+            background-color: white;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes typing {
+            100% {
+                left: 100%;
+                margin-left: 30px;
+            }
+        }
+
+        .search {
+            margin-right: -55px;
+            width: max-content;
+            display: flex;
+            align-items: center;
+            padding: 14px;
+            background-color: #dbe4ec;
+            border-radius: 30px;
+            gap: 8px;
+        }
+
+        .search-input {
+            width: 200px;
+            border: none;
+            height: 20px;
+            color: #333333;
+            outline: none;
+            background-color: transparent;
+        }
+
+        .intro {
+            display: flex;
+            /* justify-content: space-between; */
+        }
+
+        .para {
+            /* transform: translate(130px, 38px); */
+            margin: 68px 0 0 130px;
+            font-size: xx-large;
+            width: 600px;
+            font-weight: 600;
+            color: #2f384a;
+            line-height: 1.5;
+            font-family: poppins;
+        }
+
+        .introheading {
+            font-size: 40px;
+            font-weight: 600;
+            color: #2f384a;
+            font-family: poppins;
+        }
+
+        main {
+            background-image: url(trip_origin_19dp_F3F3F3_FILL0_wght400_GRAD0_opsz20.svg);
+            background-position: 44px 18px;
+            background-size: 152px;
+            background-repeat: no-repeat;
+            /* height: 1600px; */
+        }
+
+        .picture {
+            display: flex;
+            height: 415px;
+            width: 335px;
+            margin-top: -20px;
+            margin-left: 116px;
+            transform: rotate(6deg);
+            box-shadow: 1px 2px 5px -1px gray;
+            flex-direction: column;
+        }
+
+        .picture img {
+            height: 30px;
+            margin-left: 4px;
+            margin-top: 8px;
+        }
+
+        .picture .mine {
+            height: 300px;
+            transform: scale(1.05) translate(21px, 7px);
+            ;
+        }
+
+        .tagline {
+            margin-top: 22px;
+            margin-left: 41px;
+            font-size: larger;
+            font-family: Merienda;
+            font-weight: 600;
+            color: #002a6c;
+        }
+
+        .background {
+            height: 200px;
+        }
+
+        .aboutme {
+            /* transform: translate(107px, 60px); */
+            margin: 60px 0 0 107px;
+            width: 600px;
+            line-height: 1.7;
+            font-size: large;
+            font-weight: 500;
+            border: 2px solid rgb(219, 219, 219);
+            padding: 13px 33px;
+            padding-bottom: 20px;
+            border-radius: 20px;
+            transition: box-shadow 0.2s ease-out;
+            background: linear-gradient(to right, rgba(255, 237, 237, 0.651), rgba(227, 227, 255, 0.658));
+        }
+
+        .aboutme:hover {
+            box-shadow: inset 0px 0px 2px 0px #2f384a;
+        }
+
+        .color1 {
+            font-family: poppins;
+            color: red;
+            font-weight: 600;
+            font-size: xx-large;
+        }
+
+        .color2 {
+            font-family: poppins;
+            color: #7a9147;
+            font-weight: 600;
+            font-size: xx-large;
+        }
+
+        .name {
+            font-weight: 700;
+            color: #01255f;
+        }
+
+        .main2 {
+            display: flex;
+            justify-content: space-around;
+            align-items: self-start;
+            margin-top: 60px;
+        }
+
+        .illustrator {
+            transform: translateX(50px);
+            height: 400px;
+        }
+
+        .technology {
+            display: flex;
+            width: 500px;
+            font-size: x-large;
+            font-family: poppins;
+            font-weight: 600;
+            color: #59357a;
+            justify-content: center;
+        }
+
+        .icons {
+            display: flex;
+            width: 410px;
+            gap: 28px 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .sidebar {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer {
+            height: 600px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer {
+            position: relative;
+            border-radius: 15px;
+            margin-top: 50px;
+            height: 500px;
+            width: 80%;
+            border: 1px solid rgb(206, 206, 206);
+            margin-bottom: 50px;
+            background: linear-gradient(to right, rgb(255, 233, 233), rgb(228, 255, 228));
+        }
+
+        .footer1 {
+            margin-top: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .resume {
+            border: none;
+            background: linear-gradient(to left, rgb(255, 196, 196), rgb(255, 231, 158));
+            color: #242424;
+            padding: 15px 20px;
+            font-size: 15px;
+            border-radius: 28px;
+            margin-left: 80px;
+            animation: resumeanimation 0.4s ease-out infinite alternate;
+        }
+
+        @keyframes resumeanimation {
+            from {
+                background: linear-gradient(to left, rgb(255, 196, 196), rgb(255, 231, 158));
+            }
+
+            to {
+                transform: scale(1.02);
+                background: linear-gradient(to right, rgb(255, 196, 196), rgb(255, 231, 158));
+                box-shadow: 0px 1px 5px -1px gray;
+            }
+        }
+
+        .copyright {
+            font-family: sans-serif;
+            color: gray;
+            position: absolute;
+            bottom: 55px;
+            left: 78px;
+        }
+
+        .connect {
+            position: relative;
+            font-family: sans-serif;
+            font-size: 18px;
+            font-weight: 510;
+            line-height: 34px;
+            margin-right: 104px;
+            color: #9399a3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mail {
+            font-weight: 500;
+            color: rgb(109, 109, 109);
+        }
+
+        .me {
+            font-weight: 700;
+            color: #262d3a;
+        }
+
+        .designer {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+        }
+
+        .quote {
+            color: rgb(41, 44, 56);
+            /* margin-left: 74px; */
+            /* margin-top: 78px; */
+            width: 465px;
+            font-size: 28px;
+            font-weight: 600;
+            font-family: poppins;
+        }
+
+        .footer2 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 78px;
+        }
+
+        .socialmedia {
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 50px;
+        }
+
+        .follow {
+            font-family: mulish;
+            font-size: 18px;
+            font-weight: 700;
+            color: #262d3a;
+        }
+
+        .socialicon {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .socialicon i:hover {
+            transform: translateY(-10px) scale(1.1);
+            background-color: rgb(61, 39, 13);
+            color: white;
+            box-shadow: 0px 0px 20px 2px rgb(61, 39, 13);
+        }
+
+        .socialicon i {
+            transition: transform 0.2s ease-in-out, background-color 0.1s ease;
+            font-size: 18px;
+            color: #242424;
+            border: 1px solid rgb(177, 177, 177);
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        nav .ul a {
+            color: black;
+        }
+
+        /* .main3 {} */
+
+        h1 {
+            font-family: poppins;
+            text-align: center;
+            margin-top: 100px;
+            font-weight: 600;
+            color: #262d3a;
+        }
+
+        /* .nav-link.active {
+        color: red;
+    } */
+
+        .projects {
+            position: relative;
+            margin: auto;
+            max-width: 80vw;
+            margin-top: 80px;
+            border: 1px solid rgb(209, 209, 209);
+            border-radius: 30px;
+            display: flex;
+            align-items: self-start;
+            box-shadow: 0px 0px 5px 2px rgb(209, 209, 209);
+        }
+
+        .projectheading {
+            margin-top: 20px;
+            margin-left: 30px;
+            font-size: x-large;
+            font-weight: 600;
+            font-family: poppins;
+        }
+
+        .projectleft {
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 30px;
+            justify-content: start;
+            /* padding: 20px 50px; */
+            margin: 10px;
+            border: 1px solid rgb(209, 209, 209);
+            width: 470px;
+        }
+
+        .projectright img {
+            border: 1px solid rgb(209, 209, 209);
+            border-radius: 30px;
+            margin: 10px 10px;
+            padding: 0 20px;
+            height: 400px;
+        }
+
+        .projectdescription {
+            margin-left: 30px;
+            width: 280px;
+            padding-bottom: 30px;
+            line-height: 23px;
+        }
+
+        .viewproject {
+            /* max-width: fit-content; */
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            gap: 20px;
+            padding: 5px 10px;
+            border: 1px solid gray;
+            border-radius: 20px;
+            transition: transform 0.2s ease-in, background-color 0.2s ease-out;
+            color: #242424;
+        }
+
+        .viewproject:hover {
+            transform: scale(1.04);
+            background-color: #262d3a;
+            color: white;
+        }
+
+        .viewtext {
+            font-family: poppins;
+            font-weight: 600;
+        }
+
+        .viewproject img {
+            position: relative;
+            top: 2px;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        @media screen and (max-width: 432px) {
+            footer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .footer1 {
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                align-items: self-start;
+            }
+
+            .resume {
+                position: relative;
+                top: -40px;
+                left: 16px;
+                font-size: 15px;
+                width: 136px;
+                display: flex;
+                justify-content: center;
+                padding: 10px 10px;
+            }
+
+            .connect {
+                margin-right: 0;
+                position: absolute;
+                left: 12px;
+                font-size: 14px;
+                line-height: 23px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translate(37px, 32px);
+            }
+
+            .footer2 {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+
+            }
+
+            .quote {
+                position: relative;
+                top: -8px;
+                left: 27px;
+                font-size: large;
+                width: 162px;
+            }
+
+            .socialicon i {
+                font-size: 19px;
+                padding: 7px;
+            }
+
+            .follow {
+                font-size: 15px;
+            }
+
+            .socialicon {
+                gap: 10px;
+            }
+
+            .socialmedia {
+                position: relative;
+                top: 15px;
+                line-height: 40px;
+                margin: 0px 88px;
+            }
+
+            .copyright {
+                font-size: 10px;
+                font-weight: 400;
+                font-family: sans-serif;
+                margin: 0 12px;
+            }
+
+            .designer {
+                transform: translate(28px, 10px);
+                font-size: xx-small;
+            }
+
+            nav {
+                height: 50px;
+                max-width: 95vw;
+                border-radius: 100px;
+
+            }
+
+            .title {
+                line-height: 18px;
+                font-size: 15px;
+                margin-left: 30px;
+            }
+
+            .ul {
+                display: none;
+            }
+
+            .navsidebar .in,
+            .up {
+                font-size: 17px;
+                display: block;
+            }
+
+            .navsidebar .up{
+                width: fit-content;
+            }
+
+            /* nav .in,.up {
+                display: none;
+            } */
+
+            .search {
+                height: 5px;
+                width: 100px;
+                /* position: relative;
+                right: 40px; */
+            }
+
+            .search-icon {
+                font-size: 16px;
+            }
+
+            .search-input {
+                font-size: 12px;
+                width: 81px;
+            }
+
+            .hamburger {
+                display: block;
+                font-size: 21px;
+            }
+
+            /* main{
+                display: flex;
+                flex-direction: column;
+            } */
+
+            .intro {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .intro .para {
+                font-size: 26px;
+                width: 350px;
+                margin: auto;
+                margin-top: 80px;
+            }
+
+            .aboutme {
+                width: 300px;
+                margin: 50px auto;
+            }
+
+            .picture {
+                margin: auto;
+                margin-top: 40px;
+            }
+
+            .intro .para span {
+                font-size: 24px;
+            }
+
+            .main2 {
+                gap: 80px;
+                align-items: center;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .illustrator {
+                height: 300px;
+                /* transform: translateX(20px); */
+            }
+
+            .technology {
+                font-size: 20px;
+                width: fit-content;
+            }
+
+            .main2 .icons {
+                margin-top: 40px;
+                display: grid;
+                grid-template-rows: 20px 20px;
+                grid-template-columns: 20px 20px 20px 20px 20px;
+                gap: 50px;
+                width: fit-content;
+                margin-right: 12px;
+            }
+
+            .sidebar {
+                display: flex;
+                justify-content: center;
+            }
+
+            .main2 .icons img {
+                height: 35px;
+            }
+
+            .main3 .h1pc {
+                display: none;
+            }
+
+            .main3 .h1phone {
+                font-weight: 700;
+                display: block;
+                line-height: 1.35;
+            }
+
+            .main3 .h1phonesmall {
+                font-size: 30px;
+            }
+
+            .h1phonebig {
+                font-size: 50px;
+            }
+
+            .projects {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .projects1 {
+                height: 580px;
+                margin-top: 50px;
+            }
+
+            .projects2 {
+                height: 626px;
+            }
+
+            .projects3 {
+                height: 626px;
+            }
+
+            .projectdescription {
+                /* padding: 0 20px; */
+                width: 250px;
+            }
+
+            .projectleft {
+                display: flex;
+                justify-content: start;
+                padding: 0 10px;
+                /* margin-left: 1px; */
+                width: fit-content;
+            }
+
+            .projectright img {
+                height: 180px;
+            }
+
+            .dynamic {
+                list-style: none;
+                margin-left: 15px;
+                font-size: 30px;
+                font-weight: 600;
+                height: 40px;
+                line-height: 40px;
+                overflow: hidden;
+            }
+
+            .static {
+                font-size: 30px;
+                font-weight: 700;
+                line-height: 30px;
+                color: #ff3e29;
+            }
+
+            .dynamic li {
+                position: relative;
+                top: 0;
+                height: 50px;
+                /* animation: slide 16s steps(4) infinite; */
+            }
+
+            .wrapper {
+                margin-bottom:-20px ;
+                position: relative;
+                margin-right: -145px;
+                right: 85px;
+            }
+
+            @keyframes slide {
+                100% {
+                    top: -200px;
+                }
+            }
+
+            @keyframes typing {
+                100% {
+                    left: 100%;
+                    margin-left: 30px;
+                }
+            }
+
+            main {
+                background-position: 20px 42px;
+                background-size: 100px;
+            }
+        }
+
+        .navsidebar {
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            min-height: fit-content;
+            width: 225px;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.74);
+            backdrop-filter: blur(4px);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            right: -255px;
+            transition: right 0.4s ease-in-out;
+        }
+
+        .navsidebar.show {
+            right: 0;
+        }
+
+        .navsidebar ul {
+            margin-top: 50px;
+            margin-left: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navsidebar a {
+            margin-bottom: 10px;
+        }
+
+        @media screen and (min-width: 433px) {
+            .main3 .h1phone {
+                display: none;
+            }
+
+            .main3 .h1pc {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a class="title" href="">Priyanshu's <br> Portfolio</a>
+        <div class="ul">
+            <ul>
+                <a href="#homeme" class="nav-link">
+                    <li>Home</li>
+                </a>
+                <a href="#aboutme" class="nav-link">
+                    <li>About</li>
+                </a>
+                <a href="#skillsme" class="nav-link">
+                    <li>Skills</li>
+                </a>
+                <a href="#projectsme" class="nav-link">
+                    <li>Projects</li>
+                </a>
+                <a href="#contactsme" class="nav-link">
+                    <li>Contact</li>
+                </a>
+            </ul>
+            <a class="in" href="#">Signin</a>
+            <a class="up" href="#">Signup</a>
+        </div>
+        <div class="search">
+            <span class="search-icon material-symbols-outlined">search</span>
+            <input class="search-input" type="search" placeholder="Search">
+        </div>
+        <a onclick=showsidebar(event) style="font-size: 24px; margin-right: 32px;" href="#"><i
+                class="hamburger fas fa-bars" style="color: #2f3032;"></i></a>
+
+
+        <!-- navsidebar -->
+
+        <div class="ul navsidebar">
+            <ul>
+                <a onclick=hidesidebar(event) href="#" class="nav-link">
+                    <i style="font-size: 24px;" class="fa-solid fa-xmark"></i>
+                </a>
+                <a href="#homeme" class="nav-link">
+                    <li>Home</li>
+                </a>
+                <a href="#aboutme" class="nav-link">
+                    <li>About</li>
+                </a>
+                <a href="#skillsme" class="nav-link">
+                    <li>Skills</li>
+                </a>
+                <a href="#projectsme" class="nav-link">
+                    <li>Projects</li>
+                </a>
+                <a href="#contactsme" class="nav-link">
+                    <li>Contact</li>
+                </a>
+                <a class="in" href="#">Signin</a>
+                <a class="up" href="#">Signup</a>
+            </ul>
+        </div>
+
+
+        <!-- navsidebar -->
+    </nav>
+    <main>
+        <div id="homeme" class="wrapper">
+            <div class="static">I'm a</div>
+            <ul class="dynamic">
+                <li><span>Developer.</span></li>
+                <li><span>Graphic Designer.</span></li>
+                <li><span>Coder.</span></li>
+                <li><span>Video Editor.</span></li>
+            </ul>
+        </div>
+        <div class="intro">
+            <div class="text">
+                <div class="para">"Blending <span class="color1">code</span> and creativity as a Web Developer and
+                    Graphic Designer to deliver
+                    <span class="color2">innovative</span> digital solutions."
+                </div>
+                <div id="aboutme" class="aboutme">
+                    <div class="introheading">About Me</div>
+                    I am <span class="name">Priyanshu Singh Chauhan</span>, a 3rd-year engineering student with
+                    expertise in web
+                    development, graphic design, and video editing. <br><br> Skilled in crafting clean user interfaces
+                    with
+                    HTML and
+                    CSS, designing professional visuals in Photoshop, and editing e-commerce photos, I am passionate
+                    about
+                    creating aesthetic, functional, and impactful digital solutions.
+                </div>
+            </div>
+            <div class="picture">
+                <div><img src="drawing-pin-146214_1280.png" alt=""></div>
+                <div><img class="mine" src="intro3.jpg" alt=""></div>
+                <div class="tagline">Crafting ideas into reality.</div>
+            </div>
+        </div>
+        <div class="main2">
+            <div><img class="illustrator" src="coderillustrator.svg" alt=""></div>
+            <div class="sidebar">
+                <div id="skillsme" class="technology">Technologies I am working on</div>
+                <div class="icons">
+                    <img height="50px" src="react-svgrepo-com.svg" alt="">
+                    <img height="50px" src="java-svgrepo-com.svg" alt="">
+                    <img height="50px" src="js-svgrepo-com.svg" alt="">
+                    <img height="50px" src="node-js-svgrepo-com.svg" alt="">
+                    <img height="50px" src="python-svgrepo-com.svg" alt="">
+                    <img height="50px" src="adobe-photoshop-svgrepo-com.svg" alt="">
+                    <img height="50px" src="adobe-premiere-svgrepo-com.svg" alt="">
+                    <img height="50px" src="adobe-lightroom-svgrepo-com.svg" alt="">
+                    <img height="50px" src="css-3-svgrepo-com.svg" alt="">
+                    <img height="50px" src="cpp-svgrepo-com.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="main3">
+            <h1 class="h1pc">Projects I have worked on</h1>
+            <h1 class="h1phone">
+                <div class="h1phonebig">Projects</div>
+                <div class="h1phonesmall">I have worked on</div>
+            </h1>
+            <div id="projectsme" class="projects  projects1">
+                <div class="projectleft">
+                    <div class="projectheading">Netflix Clone</div>
+                    <div class="projectdescription">
+                        A frontend replica of Netflix, built using only HTML and CSS, featuring a responsive design and
+                        visually accurate layout. This project challenged me to recreate the interface while honing my
+                        skills in crafting structured, clean, and engaging web pages.</div>
+                </div>
+                <div class="projectright"><img src="mockuper2.png" alt=""></div>
+                <a href="">
+                    <div class="viewproject">
+                        <div class="viewtext">View Project</div>
+                        <div><img src="arrow_right.svg" alt=""></div>
+                    </div>
+                </a>
+            </div>
+            <div class="projects projects2" style="margin-top: 40px;">
+                <div class="projectleft">
+                    <div class="projectheading">UltraEdit Clone</div>
+                    <div class="projectdescription">
+                        A carefully crafted frontend clone of the UltraEdit website, built with a focus on advanced CSS
+                        techniques, including extensive use of <b>grid</b> for layout design. This project showcases my
+                        ability
+                        to create responsive and structured designs while exploring modern CSS methodologies for clean
+                        and efficient code.</div>
+                </div>
+                <div class="projectright"><img src="ultaeditmockuper2.png" alt=""></div>
+                <a href="">
+                    <div class="viewproject">
+                        <div class="viewtext">View Project</div>
+                        <div><img src="arrow_right.svg" alt=""></div>
+                    </div>
+                </a>
+            </div>
+            <div class="projects projects3" style="margin-top: 40px;">
+                <div class="projectleft">
+                    <div class="projectheading">Portfolio Website</div>
+                    <div class="projectdescription">
+                        A personalized and dynamic portfolio website designed to showcase my projects, skills, and
+                        achievements. This project highlights my expertise in web development, focusing on creating a
+                        clean, responsive, and visually engaging interface tailored to represent my professional
+                        journey.</div>
+                </div>
+                <div class="projectright"><img src="portfoliomockuper2.png" alt=""></div>
+                <a href="">
+                    <div class="viewproject">
+                        <div class="viewtext">View Project</div>
+                        <div><img src="arrow_right.svg" alt=""></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="contactsme" class="footer">
+            <div class="footer1">
+                <a href="#">
+                    <div class="resume">Download Resume</div>
+                </a>
+                <div class="connect">
+                    <div class="me">Connect with me</div>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=priyanshusinghchauhan40@example.com&su=Hello&body=I%20want%20to%20get%20in%20touch%20with%20you"
+                        target="_blank">
+                        <div class="mail">priyanshusinghchauhan40@gmail.com</div>
+                    </a>
+                </div>
+            </div>
+            <div class="footer2">
+                <div class="quote">"Together, we can create impactful digital experiences that drive success."
+                </div>
+                <div class="socialmedia">
+                    <div class="follow">Follow Me</div>
+                    <div class="socialicon">
+                        <a href="https://www.linkedin.com/in/priyanshu-singh-chauhan-6a386a216/" target="_blank"><i
+                                class='bx bxl-linkedin'></i></a>
+                        <a href="https://images.unsplash.com/photo-1529525066119-6d86dbc1057b?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                        <a href="https://www.instagram.com/real.priyanshuu?igsh=dmRmMW45emF0YzBm" target="_blank"><i
+                                class='bx bxl-instagram'></i></a>
+                        <a href="https://github.com/priyanshusc" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">Copyright &copy; 2025. All rights reserved.</div>
+            <div class="designer">Made with ❤️ By <b>Priyanshu</b></div>
+        </div>
+    </footer>
+    <!-- <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                // Prevent the event from bubbling up to the document body
+                event.stopPropagation();
+    
+                // Remove the active class from all links
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                
+                // Add the active class to the clicked link
+                this.classList.add('active');
+            });
+        });
+    
+        // Add an event listener to the document body to remove the active class when clicking outside of the nav
+        document.body.addEventListener('click', function() {
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        });
+    
+        // Prevent the event from bubbling up to the document body when clicking inside the nav
+        document.querySelector('nav').addEventListener('click', function(event) {
+            event.stopPropagation();
+        }); 
+    </script> -->
+
+    <script>
+        function showsidebar(event) {
+            event.preventDefault(); // Prevent the default action
+            const navsidebar = document.querySelector('.navsidebar');
+            navsidebar.classList.add('show');
+        }
+
+        function hidesidebar(event) {
+            event.preventDefault(); // Prevent the default action
+            const navsidebar = document.querySelector('.navsidebar');
+            navsidebar.classList.remove('show');
+        }
+
+    </script>
+</body>
+
+</html>
