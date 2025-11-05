@@ -9,6 +9,7 @@ const lenis = new Lenis({
   wheelMultiplier: 1,
   // smoothTouch: true,
   touchMultiplier: 2,
+  //  smoothWheel: false,
 });
 
 function Nav() {
@@ -24,7 +25,7 @@ function Nav() {
   const [indicator, setIndicator] = useState<{ left: number; top: number; width: number; height: number }>({ left: 0, top: 0, width: 0, height: 32 });
   const linkRefs = useRef(new Map<string, HTMLAnchorElement | null>());
   const suppressObserver = useRef(false);
-  
+
   const updateIndicator = () => {
     const el = linkRefs.current.get(active);
     if (!el) return;
@@ -56,7 +57,7 @@ function Nav() {
           current = l.href;
         }
       }
-      
+
       const isAtBottom = window.innerHeight + scroll >= document.body.offsetHeight - 2;
       if (isAtBottom) {
         current = links[links.length - 1].href;
@@ -84,15 +85,15 @@ function Nav() {
       window.clearTimeout(i);
     };
   }, [active]);
-  
+
   // --- UPDATED onNavClick to use Lenis ---
   const onNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     suppressObserver.current = true;
     setActive(href);
-    
+
     lenis.scrollTo(href, { offset: -100, duration: 1.5 });
-    
+
     window.history.replaceState(null, "", href);
     requestAnimationFrame(updateIndicator);
     window.setTimeout(() => {
@@ -283,6 +284,12 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    title: "Baatchit",
+    image: "/baatchit.png",
+    stack: ["React", "Tailwind CSS", "Socket.IO", "Express.js"],
+    href: "https://github.com/priyanshusc/Baatchit-App",
+  },
+  {
     title: "Leetquiz",
     image: "/Leetquiz.png",
     stack: ["React", "Tailwind CSS", "Mistral AI"],
@@ -370,9 +377,9 @@ const SKILLS: Skill[] = [
   { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel/ffffff" },
   { name: "Netlify", icon: "https://cdn.simpleicons.org/netlify/00C7B7" },
   { name: "HTML", icon: "https://cdn.simpleicons.org/html5/E34F26" },
-  // { name: "Express", icon: "https://cdn.simpleicons.org/express/ffffff" },
+  { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
+  { name: "Express", icon: "https://cdn.simpleicons.org/express/ffffff" },
   // { name: "Prisma", icon: "https://cdn.simpleicons.org/prisma/2D3748" },
-  // { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
   // { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
 ];
 
@@ -386,6 +393,7 @@ const ROW1 = [
   "Git",
   "GitHub",
   "HTML",
+  "MongoDB",
 ];
 
 const ROW2 = [
@@ -396,6 +404,7 @@ const ROW2 = [
   "C++",
   "Vercel",
   "Netlify",
+  "Express",
   "React", // 👈 common logo with Row 1
 ];
 
@@ -525,8 +534,8 @@ function AchievementCard({ a }: { a: Achievement }) {
         <div className="flex items-center justify-between">
           <h3 className="font-semibold text-lg">{a.title}</h3>
           <a href={a.href} target="_blank" rel="noopener noreferrer" className="text-neon-blue hover:text-white inline-flex items-center gap-1 text-sm">
-  View <ExternalLink className="size-4" />
-</a>
+            View <ExternalLink className="size-4" />
+          </a>
         </div>
         <p className="mt-2 text-sm text-zinc-300">{a.issuer}</p>
       </div>
@@ -568,7 +577,7 @@ function Contact() {
 }
 
 export default function Index() {
-    useEffect(() => {
+  useEffect(() => {
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
