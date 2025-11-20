@@ -1,0 +1,130 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 50% 4%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 50% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 256 84% 65%;
+    --primary-foreground: 222 100% 9%;
+
+    --secondary: 226 30% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 25% 14%;
+    --muted-foreground: 220 14% 72%;
+
+    --accent: 270 90% 70%;
+    --accent-foreground: 230 100% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 223 24% 20%;
+    --input: 223 24% 20%;
+    --ring: 256 84% 65%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 228 20% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 256 84% 65%;
+    --sidebar-primary-foreground: 222 100% 9%;
+    --sidebar-accent: 240 4.8% 15.9%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 13% 18%;
+    --sidebar-ring: 256 84% 65%;
+
+    --neon-blue: 210 100% 60%;
+    --neon-purple: 275 100% 70%;
+    --neon-pink: 320 100% 70%;
+    --neon-green: 160 100% 60%;
+  }
+
+  .dark {
+    --background: 222 50% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 228 20% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 228 20% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 256 84% 65%;
+    --primary-foreground: 222 100% 9%;
+
+    --secondary: 226 30% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 25% 14%;
+    --muted-foreground: 220 14% 72%;
+
+    --accent: 275 100% 70%;
+    --accent-foreground: 230 100% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 223 24% 20%;
+    --input: 223 24% 20%;
+    --ring: 256 84% 65%;
+    --sidebar-background: 228 20% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 256 84% 65%;
+    --sidebar-primary-foreground: 222 100% 9%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 256 84% 65%;
+
+    --neon-blue: 210 100% 60%;
+    --neon-purple: 275 100% 70%;
+    --neon-pink: 320 100% 70%;
+    --neon-green: 160 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+      Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+      "Segoe UI Emoji";
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: "Space Grotesk", Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+    letter-spacing: 0.2px;
+  }
+
+  .font-hero {
+    font-family: "Poppins", "Space Grotesk", Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+  }
+}
+
+.hover\:scale-102:hover {
+    --tw-scale-x: 1.02;
+    --tw-scale-y: 1.02;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
