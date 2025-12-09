@@ -297,9 +297,15 @@ const PROJECTS: Project[] = [
     href: "https://github.com/priyanshusc/Baatchit-App",
   },
   {
+    title: "AI SkillPath",
+    images: ["/Skillpath.png", "/Skillpath2.png",], // Add your real extra images here
+    stack: ["React", "Django", "Gemini API",],
+    href: "https://github.com/priyanshusc/AI-SkillPath",
+  },
+  {
     title: "Collabify",
     images: ["/Collabify2.png", "/Collabify.png"],
-    stack: ["React", "Tailwind CSS", "Y.js", "Socket.IO", "Express.js", "Axios"],
+    stack: ["React", "Y.js", "Socket.IO", "Express.js", "Axios"],
     href: "https://github.com/priyanshusc/Collabify",
   },
   {
