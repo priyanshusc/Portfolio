@@ -285,12 +285,11 @@ function Hero() {
 
               <a
                 href="/Resume.pdf"
-                download="/Priyanshu_resume.pdf"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="rounded-full px-6 py-3 xxxsm:text-[13px] xxsm:text-sm font-semibold text-white bg-gradient-to-r from-neon-purple/80 via-neon-blue/70 to-neon-pink/80 bg-[length:200%_200%] transition-all duration-500 ease-in-out hover:bg-[position:100%_0%]"
               >
-                Download Resume
+                View Resume
               </a>
             </div>
 
@@ -451,97 +450,64 @@ function Projects() {
   );
 }
 
-type Skill = { name: string; icon: string };
-
-const SKILLS: Skill[] = [
-  { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
-  { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
-  { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
-  { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
-  { name: "Tailwind", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
-  { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap/7952B3" },
-  { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
-  { name: "Firebase", icon: "https://cdn.simpleicons.org/firebase/FFCA28" },
-  { name: "Git", icon: "https://cdn.simpleicons.org/git/F05032" },
-  { name: "GitHub", icon: "https://cdn.simpleicons.org/github/ffffff" },
-  { name: "Figma", icon: "https://cdn.simpleicons.org/figma/F24E1E" },
-  { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus/00599C" },
-  { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel/ffffff" },
-  { name: "Netlify", icon: "https://cdn.simpleicons.org/netlify/00C7B7" },
-  { name: "HTML", icon: "https://cdn.simpleicons.org/html5/E34F26" },
-  { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
-  { name: "Express", icon: "https://cdn.simpleicons.org/express/ffffff" },
-  // { name: "Prisma", icon: "https://cdn.simpleicons.org/prisma/2D3748" },
-  // { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
+const SKILL_CATEGORIES = [
+  {
+    title: "LANGUAGES",
+    skills: ["JavaScript (ES6+)", "C++", "HTML5", "CSS3"],
+  },
+  {
+    title: "FRONTEND DEVELOPMENT",
+    skills: ["React.js", "Redux", "TanStack Query", "Tailwind CSS", "Bootstrap"],
+  },
+  {
+    title: "BACKEND & REAL-TIME",
+    skills: ["Node.js", "Express.js", "REST APIs", "WebSockets"],
+  },
+  {
+    title: "DATABASE & CLOUD",
+    skills: ["MongoDB", "Mongoose (ODM)", "Firebase", "Vercel", "Netlify"],
+  },
+  {
+    title: "DEVOPS & DESIGN TOOLS",
+    skills: ["Docker", "Git", "GitHub", "Postman", "Figma", "VS Code"],
+  },
+  {
+    title: "CORE ENGINEERING FUNDAMENTALS",
+    skills: ["DSA", "OOPs", "System Design"],
+  },
 ];
-
-// 👉 Split into two groups (you can adjust which skills go where)
-const ROW1 = [
-  "React",
-  "TypeScript",
-  "JavaScript",
-  "Node.js",
-  "Tailwind",
-  "Git",
-  "GitHub",
-  "HTML",
-  "MongoDB",
-];
-
-const ROW2 = [
-  "Bootstrap",
-  "PostgreSQL",
-  "Firebase",
-  "Figma",
-  "C++",
-  "Vercel",
-  "Netlify",
-  "Express",
-  "React", // 👈 common logo with Row 1
-];
-
-// Map by name for easy lookup
-const getSkill = (name: string) => SKILLS.find((s) => s.name === name)!;
 
 function Skills() {
-  const row1 = ROW1.map(getSkill);
-  const row2 = ROW2.map(getSkill);
-
   return (
-    <section id="skills" className="py-14 scroll-mt-28 sm:scroll-mt-36">
+    <section id="skills" className="py-16 scroll-mt-28 sm:scroll-mt-36">
       <div className="container max-w-7xl px-5 md:px-8">
         <h2 className="font-display font-semibold text-3xl sm:text-4xl text-center mb-10">
           Technical Skills
         </h2>
-        <div className="space-y-4">
-          {/* Row 1 */}
-          <div className="relative overflow-hidden">
-            <div className="flex min-w-max items-center gap-4 md:gap-8 whitespace-nowrap animate-marquee duration-[60s] hover:[animation-play-state:paused]">
-              {[...row1, ...row1].map((s, i) => (
-                <span
-                  key={s.name + i}
-                  className="inline-flex items-center rounded-xl border border-white/10 bg-white/5 xxsm:px-5 xxsm:py-4 xxxsm:px-4 xxxsm:py-3 md:px-6 md:py-5 xxxsm:text-[15px] xxsm:text-base text-zinc-200"
-                >
-                  <img src={s.icon} alt={s.name} className="mr-2 h-5 w-5" />
-                  {s.name}
-                </span>
-              ))}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {SKILL_CATEGORIES.map((category) => (
+            <div
+              key={category.title}
+              className="group relative flex flex-col rounded-2xl border border-white/10 bg-card/60 backdrop-blur-sm p-6 overflow-hidden transition-all duration-300 hover:shadow-neon-purple-light"
+            >
+              {/* Subtle top border highlight on hover */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:via-neon-purple transition-colors duration-500" />
+
+              <h3 className="mb-5 font-display text-sm sm:text-base font-bold tracking-[0.14em] text-white/90">
+                {category.title}
+              </h3>
+              <div className="flex flex-wrap gap-2.5">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="inline-flex items-center cursor-pointer rounded-md border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-zinc-300 transition-colors group-hover:bg-white/10 group-hover:text-white"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-          {/* Row 2 (reverse) */}
-          <div className="relative overflow-hidden">
-            <div className="flex min-w-max items-center gap-4 md:gap-8 whitespace-nowrap animate-marquee-reverse duration-[60s] hover:[animation-play-state:paused]">
-              {[...row2, ...row2].map((s, i) => (
-                <span
-                  key={s.name + "-r-" + i}
-                  className="inline-flex items-center rounded-xl border border-white/10 bg-white/5 xxsm:px-5 xxsm:py-4 xxxsm:px-4 xxxsm:py-3 md:px-6 md:py-5 xxxsm:text-[15px] xxsm:text-base text-zinc-200"
-                >
-                  <img src={s.icon} alt={s.name} className="mr-2 h-5 w-5" />
-                  {s.name}
-                </span>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -565,7 +531,7 @@ function Education() {
               </div>
               <div>
                 <h3 className="font-semibold leading-snug">
-                  Galgotias’ College Of Engineering And Technology
+                  Dr. A.P.J. Abdul Kalam Technical University
                 </h3>
                 <p className="text-sm text-zinc-400 mt-1">
                   B.Tech • Computer Science & Engineering (Data Science)
@@ -615,10 +581,10 @@ const ACHIEVEMENTS: Achievement[] = [
     issuer: "Certified by Oracle for Generative AI skills.",
   },
   {
-    title: "Google Analytics Certification",
+    title: "AI and Data Scientist",
     image: "/Oneroadmap.png",
     href: "https://oneroadmap.io/skills/ai-ds/certificate/CERT-B3E7D6BB",
-    issuer: "Awarded by Google for data analysis skills.",
+    issuer: "Awarded by Oneroadmap",
   },
   {
     title: "Google Analytics Certification",
