@@ -15,17 +15,18 @@ export const PROJECTS: Project[] = [
     id: "baatchit",
     title: "Baatchit",
     description:
-      "A real-time chat application with instant messaging and user presence.",
+      "A production-ready real-time communication platform with custom-branded email verification and secure authentication.",
     longDescription:
-      "Baatchit is a comprehensive real-time chat application built to facilitate seamless communication. Utilizing WebSockets for instant message delivery, it provides a highly responsive user experience. It supports user authentication, online/offline status indicators, and maintaining chat history.",
+      "Baatchit is a high-performance MERN stack application designed for seamless real-time interaction. It features a robust email verification system via Resend API, custom DNS configurations for high deliverability, and Socket.IO for sub-100ms message latency. The architecture includes secure JWT-based session management and a polished, responsive UI optimized for modern devices.",
     images: ["/baatchit2.png", "/baatchit.png"],
-    stack: ["React", "Tailwind CSS", "Socket.IO", "Express.js"],
+    stack: ["React", "MongoDB", "Socket.IO", "Node.js", "Express.js", "Resend", "JWT"],
     githubLink: "https://github.com/priyanshusc/Baatchit-App",
+    liveLink: "https://baatchit.priyanshusc.tech/", // Added your new professional domain
     features: [
-      "Real-time bidirectional communication via Socket.IO",
-      "User authentication and private messaging",
-      "Online presence and typing indicators",
-      "Modern, responsive UI using Tailwind CSS",
+      "Real-time bidirectional messaging with Socket.IO",
+      "Secure Email Verification system",
+      "Production-grade DNS setup (SPF/DKIM) for high inbox deliverability",
+      "Stateless authentication using JWT with secure password hashing via Bcrypt",
     ],
   },
   {
