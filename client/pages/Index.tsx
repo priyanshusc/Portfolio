@@ -22,7 +22,6 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { Project, PROJECTS } from "@/lib/data";
 import { useNavigate } from "react-router-dom";
-import StaggeredMenu from "@/components/ui/StaggeredMenu";
 
 const NAV_LINKS = [
   { href: "#projects", label: "Projects" },
@@ -32,10 +31,9 @@ const NAV_LINKS = [
 ];
 
 function Nav() {
-  const [isStaggeredOpen, setIsStaggeredOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState<string>(NAV_LINKS[0].href);
   const [scrolled, setScrolled] = useState(false);
-  const staggeredMenuRef = useRef<{ toggleMenu: () => void }>(null);
   const [indicator, setIndicator] = useState<{
     left: number;
     top: number;
@@ -126,6 +124,14 @@ function Nav() {
     }, 900);
   };
 
+  const handleMobileLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    onNavClick(e, href);
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
       <header className="fixed top-7 left-0 right-0 z-50">
@@ -195,40 +201,39 @@ function Nav() {
 
               {/* HAMBURGER BUTTON (Visible only on mobile) */}
               <button
-                onClick={() => staggeredMenuRef.current?.toggleMenu()}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="md:hidden p-2 rounded-full text-white hover:bg-white/10 focus:outline-none"
                 aria-label="Toggle menu"
               >
-                {isStaggeredOpen ? <X size={24} /> : <AlignLeft size={24} />}
+                {isMenuOpen ? <X size={24} /> : <AlignLeft size={24} />}
               </button>
             </div>
           </div>
         </nav>
       </header>
-      <div className="md:hidden">
-        <StaggeredMenu
-          ref={staggeredMenuRef}
-          position="right"
-          items={[
-            { label: 'Projects', ariaLabel: 'Go to projects', link: '#projects' },
-            { label: 'Skills', ariaLabel: 'Go to skills', link: '#skills' },
-            { label: 'Achievements', ariaLabel: 'Go to achievements', link: '#achievements' },
-            { label: 'Contact', ariaLabel: 'Go to contact', link: '#contact' },
-          ]}
-          socialItems={[]}
-          displaySocials={false}
-          displayItemNumbering={true}
-          colors={['#1a1033', '#7c3aed']}
-          accentColor="#a855f7"
-          menuButtonColor="#ffffff"
-          openMenuButtonColor="#ffffff"
-          changeMenuColorOnOpen={false}
-          logoUrl=""
-          isFixed={true}
-          closeOnClickAway={true}
-          onMenuOpen={() => setIsStaggeredOpen(true)}
-          onMenuClose={() => setIsStaggeredOpen(false)}
-        />
+      <div
+        className={cn(
+          "md:hidden fixed bottom-0 left-0 right-0 z-40 w-full",
+          "bg-card/80 backdrop-blur-lg rounded-t-2xl border-x border-t border-white/10 shadow-lg",
+          "transition-transform duration-300 ease-in-out",
+          isMenuOpen
+            ? "translate-y-0"
+            : "translate-y-full pointer-events-none",
+        )}
+      >
+        <ul className="flex flex-col items-center gap-2 p-4 pt-6 pb-safe">
+          {NAV_LINKS.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                onClick={(e) => handleMobileLinkClick(e, l.href)}
+                className="block w-full text-center text-zinc-300 hover:text-white px-4 py-2 rounded-md"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );
