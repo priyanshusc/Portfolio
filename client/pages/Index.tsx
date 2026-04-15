@@ -263,7 +263,7 @@ function Hero() {
           <div className="col-span-10 sm:col-span-10 md:col-span-10 flex flex-col-reverse md:flex-row items-center md:items-start justify-between w-full">
 
             {/* Text Column */}
-            <div className="w-full md:w-[55%] lg:w-[60%] flex flex-col mt-6 md:mt-0">
+            <div className="w-full md:w-[55%] lg:w-[60%] flex flex-col mt-12 md:mt-0">
               <h1 className="font-hero xxxsm:text-3xl xxsm:text-4xl xsm:text-5xl bmd:text-6xl bbmd:text-7xl font-extrabold md:mt-10 leading-[1.1] pb-2 bg-gradient-to-r from-white via-zinc-300 to-white bg-clip-text text-transparent">
                 Priyanshu Singh Chauhan
               </h1>
