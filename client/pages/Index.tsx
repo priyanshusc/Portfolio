@@ -259,70 +259,114 @@ function Hero() {
           {/* Left gutter kept small above 638px to reduce big empty space */}
           <div className="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1" />
 
-          {/* Content column; scales predictably and stays anchored */}
-          <div className="col-span-10 sm:col-span-9 md:col-span-8">
-            <h1 className="font-hero xxxsm:text-3xl xxsm:text-4xl xsm:text-5xl bmd:text-7xl font-extrabold mt-10 leading-[1.1] pb-2 bg-gradient-to-r from-white via-zinc-300 to-white bg-clip-text text-transparent">
-              Priyanshu Singh Chauhan
-            </h1>
+          {/* Content area: splits into left text and right Identity Module */}
+          <div className="col-span-10 sm:col-span-10 md:col-span-10 flex flex-col-reverse md:flex-row items-center md:items-start justify-between w-full">
 
-            <p className="xxxsm:text-[14px] xxsm:text-sm md:text-base uppercase pb-2 xxxsm:tracking-[0.10em] xxsm:tracking-[0.15em] md:tracking-[0.2em] text-zinc-400">
-              WEB DEVELOPER
-            </p>
+            {/* Text Column */}
+            <div className="w-full md:w-[55%] lg:w-[60%] flex flex-col mt-6 md:mt-0">
+              <h1 className="font-hero xxxsm:text-3xl xxsm:text-4xl xsm:text-5xl bmd:text-6xl bbmd:text-7xl font-extrabold md:mt-10 leading-[1.1] pb-2 bg-gradient-to-r from-white via-zinc-300 to-white bg-clip-text text-transparent">
+                Priyanshu Singh Chauhan
+              </h1>
 
-            <p className="mt-4 text-zinc-300 xxxsm:text-sm xxsm:text-base max-w-xl">
-              I build fast, elegant web experiences with modern stacks and a
-              focus on performance, accessibility, and delightful UX.
-            </p>
+              <p className="xxxsm:text-[14px] xxsm:text-sm md:text-base uppercase pb-2 xxxsm:tracking-[0.10em] xxsm:tracking-[0.15em] md:tracking-[0.2em] text-zinc-400">
+                WEB DEVELOPER
+              </p>
 
-            <div className="mt-8 flex xxxsm:flex-col xxsm:flex-row xxxsm:w-fit gap-3">
-              <a
-                href="#projects"
-                onClick={(e) => handleScroll(e, "#projects")}
-                className="rounded-full px-6 py-3 xxxsm:text-[13px] xxsm:text-sm font-semibold text-zinc-900 bg-white hover:bg-zinc-200 transition-colors"
-              >
-                Explore My Work
-              </a>
+              <p className="mt-4 text-zinc-300 xxxsm:text-sm xxsm:text-base max-w-xl">
+                I build fast, elegant web experiences with modern stacks and a
+                focus on performance, accessibility, and delightful UX.
+              </p>
 
-              <a
-                href="/Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full px-6 py-3 xxxsm:text-[13px] xxsm:text-sm font-semibold text-white bg-gradient-to-r from-neon-purple/80 via-neon-blue/70 to-neon-pink/80 bg-[length:200%_200%] transition-all duration-500 ease-in-out hover:bg-[position:100%_0%]"
-              >
-                View Resume
-              </a>
+              <div className="mt-8 flex xxxsm:flex-col xxsm:flex-row xxxsm:w-fit gap-3">
+                <a
+                  href="#projects"
+                  onClick={(e) => handleScroll(e, "#projects")}
+                  className="rounded-full px-6 py-3 xxxsm:text-[13px] xxsm:text-sm font-semibold text-zinc-900 bg-white hover:bg-zinc-200 transition-colors"
+                >
+                  Explore My Work
+                </a>
+
+                <a
+                  href="/Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full px-6 py-3 xxxsm:text-[13px] xxsm:text-sm font-semibold text-white bg-gradient-to-r from-neon-purple/80 via-neon-blue/70 to-neon-pink/80 bg-[length:200%_200%] transition-all duration-500 ease-in-out hover:bg-[position:100%_0%]"
+                >
+                  View Resume
+                </a>
+              </div>
+
+              <div className="mt-10 ml-1 flex gap-4 text-zinc-400">
+                <a
+                  href="https://github.com/priyanshusc"
+                  target="_blank"
+                  aria-label="GitHub"
+                  className="hover:text-white transition-colors"
+                >
+                  <Github />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/priyanshusinghchauhan"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                  className="hover:text-white transition-colors"
+                >
+                  <Linkedin />
+                </a>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=priyanshusinghchauhan40@example.com&su=Hello&body=I%20want%20to%20get%20in%20touch%20with%20you"
+                  target="_blank"
+                  aria-label="Email"
+                  className="hover:text-white transition-colors"
+                >
+                  <Mail />
+                </a>
+              </div>
             </div>
 
-            <div className="mt-10 ml-1 flex gap-4 text-zinc-400">
-              <a
-                href="https://github.com/priyanshusc"
-                target="_blank"
-                aria-label="GitHub"
-                className="hover:text-white transition-colors"
-              >
-                <Github />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/priyanshusinghchauhan"
-                target="_blank"
-                aria-label="LinkedIn"
-                className="hover:text-white transition-colors"
-              >
-                <Linkedin />
-              </a>
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=priyanshusinghchauhan40@example.com&su=Hello&body=I%20want%20to%20get%20in%20touch%20with%20you"
-                target="_blank"
-                aria-label="Email"
-                className="hover:text-white transition-colors"
-              >
-                <Mail />
-              </a>
+            {/* Identity Module */}
+            <div className="w-full md:w-[45%] lg:w-[40%] flex justify-center md:justify-end items-center mt-4 md:mt-10 lg:mt-12">
+              <div className="relative flex items-center justify-center">
+                {/* Static glowing border ring */}
+                <div className="absolute inset-[-4px] rounded-full shadow-[0_0_7px_hsl(var(--neon-purple)/0.7)] border border-neon-purple pointer-events-none" />
+
+                {/* Left System Info (Desktop only) */}
+                {/* <div className="absolute right-full mr-4 top-[20%] text-[8px] md:text-[10px] text-zinc-500 font-mono tracking-widest hidden md:flex flex-col items-end whitespace-nowrap">
+                  <span>SYSTEM ID:</span>
+                  <span>PRIYANSHU CHAUHAN</span>
+                  <span>[FACE] 1.0</span>
+                  <span className="inline-block mt-2 text-neon-purple text-lg">▣</span>
+                </div> */}
+
+                {/* Right System Info (Desktop only) */}
+                <div className="absolute left-full ml-4 bottom-[20%] text-[8px] md:text-[10px] text-zinc-500 font-mono tracking-widest hidden md:flex flex-col items-start whitespace-nowrap">
+                  <span>SYSTEM ID:</span>
+                  <span>PRIYANSHU CHAUHAN</span>
+                  <span>[Bio] 1.0</span>
+                  <span className="inline-block mt-2 text-neon-purple text-lg">◈</span>
+                </div>
+
+                {/* Main Avatar Container */}
+                <div className="relative w-44 h-44 xxsm:w-52 xxsm:h-52 xsm:w-60 xsm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden p-1 bg-gradient-to-b from-white/10 to-transparent border border-white/10 backdrop-blur-sm shadow-neon-purple">
+                  <div className="w-full h-full rounded-full overflow-hidden relative group">
+                    {/* Image */}
+                    <img
+                      src="/profile.jpeg"
+                      alt="Priyanshu Singh Chauhan"
+                      className="w-full h-full object-cover object-center"
+                    />
+
+                    {/* Holographic Grid Pattern Overlay */}
+
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
 
           {/* Right gutter to balance; grows slightly on larger screens */}
-          <div className="col-span-0 sm:col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5" />
+          <div className="col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1" />
         </div>
       </div>
     </section>
