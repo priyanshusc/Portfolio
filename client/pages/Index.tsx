@@ -347,7 +347,7 @@ function Hero() {
                 </div>
 
                 {/* Main Avatar Container */}
-                <div className="relative w-44 h-44 xxsm:w-52 xxsm:h-52 xsm:w-60 xsm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden p-1 bg-gradient-to-b from-white/10 to-transparent border border-white/10 backdrop-blur-sm shadow-neon-purple">
+                <div className="relative w-60 h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden p-1 bg-gradient-to-b from-white/10 to-transparent border border-white/10 backdrop-blur-sm shadow-neon-purple">
                   <div className="w-full h-full rounded-full overflow-hidden relative group">
                     {/* Image */}
                     <img
