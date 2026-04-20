@@ -501,7 +501,7 @@ const SKILL_CATEGORIES = [
   },
   {
     title: "FRONTEND DEVELOPMENT",
-    skills: ["React.js", "Redux", "TanStack Query", "Tailwind CSS", "Bootstrap"],
+    skills: ["Next.js", "React.js", "Redux", "TanStack Query", "Tailwind CSS", "Bootstrap"],
   },
   {
     title: "BACKEND & REAL-TIME",
