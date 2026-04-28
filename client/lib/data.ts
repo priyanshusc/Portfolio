@@ -8,6 +8,7 @@ export type Project = {
   githubLink: string;
   liveLink?: string;
   features: string[];
+  category?: "Personal" | "Client Work";
 };
 
 export const PROJECTS: Project[] = [
@@ -148,4 +149,21 @@ export const PROJECTS: Project[] = [
   //     "Elegant styling elements via Tailwind CSS",
   //   ],
   // },
+  {
+    id: "chator-adda",
+    title: "Chator Adda Cafe",
+    description: "A responsive cafe website built for a local client to showcase menu and basic business information.",
+    longDescription: "Chator Adda Cafe is a clean and modern frontend website developed for a local cafe client. The goal was to create a visually appealing and mobile-friendly site to display their menu, location, and contact details. The project focuses on UI/UX design, smooth animations, and responsiveness rather than complex backend functionality.",
+    images: ["/ChatorAdda.png", "/ChatorAdda2.png"],
+    stack: ["React", "Tailwind CSS", "Framer Motion"],
+    githubLink: "https://github.com/priyanshusc/ChatorAdda-Cafe",
+    liveLink: "https://chatoradda.vercel.app/",
+    features: [
+      "Fully responsive design for mobile, tablet, and desktop",
+      "Clean and structured menu display",
+      "Smooth animations using Framer Motion",
+      "Simple and intuitive UI for better user experience",
+    ],
+    category: "Client Work",
+  }
 ];
