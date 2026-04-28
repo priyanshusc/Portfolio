@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 import { lenis } from "@/lib/lenis";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
@@ -290,7 +290,7 @@ function Hero() {
                   href="/Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full px-6 py-3 xxxsm:text-[13px] xxsm:text-sm font-semibold text-white bg-gradient-to-r from-neon-purple/80 via-neon-blue/70 to-neon-pink/80 bg-[length:200%_200%] transition-all duration-500 ease-in-out hover:bg-[position:100%_0%]"
+                  className="rounded-full px-6 py-3 xxxsm:text-[13px] xxsm:text-sm font-semibold text-white bg-gradient-to-r from-neon-purple via-neon-blue/70 to-neon-pink/80 bg-[length:200%_200%] transition-all duration-500 ease-in-out hover:bg-[position:100%_0%]"
                 >
                   View Resume
                 </a>
@@ -397,7 +397,7 @@ function ProjectCard({ p }: { p: Project }) {
         sessionStorage.setItem("indexScroll", window.scrollY.toString());
         navigate(`/project/${p.id}`);
       }}
-      className="group rounded-2xl border border-white/10 bg-card/60 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-neon-purple-light flex flex-col cursor-pointer"
+      className="group h-full rounded-2xl border border-white/10 bg-card/60 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-neon-purple-light flex flex-col cursor-pointer"
     >
       {/* CAROUSEL SECTION */}
       <div className="relative w-full">
@@ -415,13 +415,21 @@ function ProjectCard({ p }: { p: Project }) {
           <CarouselContent>
             {p.images.map((imgSrc, index) => (
               <CarouselItem key={index}>
-                <div className="relative h-44 w-full overflow-hidden">
+                <div className="relative h-44 w-full overflow-hidden group">
+
+                  {/* Image */}
                   <img
                     src={imgSrc}
                     alt={`${p.title} slide ${index + 1}`}
                     className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+
+                  {/* Smooth Gradient Overlay */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+
                 </div>
               </CarouselItem>
             ))}
@@ -433,7 +441,10 @@ function ProjectCard({ p }: { p: Project }) {
           {Array.from({ length: count }).map((_, index) => (
             <button
               key={index}
-              onClick={() => api?.scrollTo(index)}
+              onClick={(e) => {
+                e.stopPropagation();
+                api?.scrollTo(index);
+              }}
               className={cn(
                 "h-1.5 rounded-full transition-all duration-300 cursor-pointer",
                 current === index
@@ -447,7 +458,7 @@ function ProjectCard({ p }: { p: Project }) {
       </div>
 
       {/* CONTENT SECTION */}
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <div className="flex items-center justify-between">
           <h3 className="font-semibold text-lg">{p.title}</h3>
           <a
@@ -459,7 +470,7 @@ function ProjectCard({ p }: { p: Project }) {
             View <ExternalLink className="size-4" />
           </a>
         </div>
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="pt-4 flex flex-wrap gap-2">
           {p.stack.map((s) => (
             <span
               key={s}
@@ -475,20 +486,67 @@ function ProjectCard({ p }: { p: Project }) {
 }
 
 function Projects() {
+  const [activeTab, setActiveTab] = useState<"Personal" | "Client Work">("Personal");
+
+  const filteredProjects = PROJECTS.filter(
+    (p) => p.category === activeTab || (!p.category && activeTab === "Personal")
+  );
+
   return (
     <section
       id="projects"
       className="pb-16 pt-4 md:pt-12 scroll-mt-28 sm:scroll-mt-36"
     >
       <div className="container max-w-7xl px-6 md:px-8">
-        <h2 className="font-display font-semibold text-3xl sm:text-4xl text-center mb-10">
+        <h2 className="font-display font-semibold text-3xl sm:text-4xl text-center mb-8">
           My Projects
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((p) => (
-            <ProjectCard key={p.title} p={p} />
-          ))}
+
+        {/* Filter Tabs */}
+        <div className="flex justify-center mb-10">
+          <div className="relative flex items-center p-1.5 rounded-full bg-[#0d0d14]/80 border border-white/10 backdrop-blur-md">
+            {(["Personal", "Client Work"] as const).map((tab, index) => (
+              <div key={tab} className="flex items-center">
+                <button
+                  onClick={() => setActiveTab(tab)}
+                  className={cn(
+                    "relative z-10 px-6 py-2 text-sm md:text-base font-medium rounded-full transition-colors duration-300",
+                    activeTab === tab ? "text-white" : "text-zinc-400 hover:text-white"
+                  )}
+                >
+                  {activeTab === tab && (
+                    <motion.div
+                      layoutId="active-tab-indicator"
+                      className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-purple via-neon-blue to-neon-pink bg-[length:250%_200%]"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-20">{tab}</span>
+                </button>
+                {index === 0 && <div className="w-[1px] h-6 bg-white/10 mx-2"></div>}
+              </div>
+            ))}
+          </div>
         </div>
+
+        <motion.div layout className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((p) => (
+              <motion.div
+                key={p.title}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                className="h-full"
+              >
+                <ProjectCard p={p} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );
