@@ -65,6 +65,24 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    id: "mehfil",
+    title: "Mehfil",
+    description:
+      "A full-stack music streaming platform with dual roles for listeners and artists.",
+    longDescription:
+      "Mehfil is a MERN stack music streaming platform with dual roles for listeners and artists. Artists upload tracks and album art via Cloudinary, while listeners like songs, follow artists, and build playlists — all with a persistent global audio player that never interrupts on navigation.",
+    images: ["/mehfil.png", "/mehfil2.png"],
+    stack: ["React", "Node.js", "Express.js", "MongoDB", "Cloudinary"],
+    githubLink: "https://github.com/priyanshusc/Mehfil",
+    // liveLink: "https://mehfil.vercel.app/",
+    features: [
+      "Dual-role system — Artists upload & manage music, Listeners discover & stream",
+      "Persistent global audio player with uninterrupted playback across navigation",
+      "Social features — Follow/unfollow artists, like/unlike songs, create playlists",
+      "Cloudinary-powered media storage for audio tracks and album art uploads",
+    ],
+  },
+  {
     id: "collabify",
     title: "Collabify",
     description:
