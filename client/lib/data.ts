@@ -133,23 +133,23 @@ export const PROJECTS: Project[] = [
       "Responsive layout mirroring the original Netflix UI",
     ],
   },
-  {
-    id: "mindsphere",
-    title: "MindSphere",
-    description:
-      "An interactive learning or mindfulness application using Flask and Gemini.",
-    longDescription:
-      "MindSphere is a unique web application blending psychological well-being or mind mapping with AI insights. Serving dynamic templates via Flask and stylizing them through Tailwind CSS, it offers users personalized interaction through the Gemini API.",
-    images: ["/MindSphere.png"],
-    stack: ["Flask", "Tailwind CSS", "Gemini API", "Javascript"],
-    githubLink: "https://github.com/priyanshusc/MindSphere",
-    features: [
-      "Python-powered backend with Flask",
-      "Interactive data processing guided by Gemini API",
-      "Lightweight Vanilla JavaScript for frontend logic",
-      "Minimalistic styling with Tailwind CSS",
-    ],
-  },
+  // {
+  //   id: "mindsphere",
+  //   title: "MindSphere",
+  //   description:
+  //     "An interactive learning or mindfulness application using Flask and Gemini.",
+  //   longDescription:
+  //     "MindSphere is a unique web application blending psychological well-being or mind mapping with AI insights. Serving dynamic templates via Flask and stylizing them through Tailwind CSS, it offers users personalized interaction through the Gemini API.",
+  //   images: ["/MindSphere.png"],
+  //   stack: ["Flask", "Tailwind CSS", "Gemini API", "Javascript"],
+  //   githubLink: "https://github.com/priyanshusc/MindSphere",
+  //   features: [
+  //     "Python-powered backend with Flask",
+  //     "Interactive data processing guided by Gemini API",
+  //     "Lightweight Vanilla JavaScript for frontend logic",
+  //     "Minimalistic styling with Tailwind CSS",
+  //   ],
+  // },
   // {
   //   id: "weather-app",
   //   title: "Weather App",
