@@ -74,7 +74,7 @@ export const PROJECTS: Project[] = [
     images: ["/mehfil.png", "/mehfil2.png"],
     stack: ["React", "Node.js", "Express.js", "MongoDB", "Cloudinary"],
     githubLink: "https://github.com/priyanshusc/Mehfil",
-    // liveLink: "https://mehfil.vercel.app/",
+    liveLink: "https://mehfil.onrender.com/",
     features: [
       "Dual-role system — Artists upload & manage music, Listeners discover & stream",
       "Persistent global audio player with uninterrupted playback across navigation",
