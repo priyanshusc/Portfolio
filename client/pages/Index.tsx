@@ -273,8 +273,10 @@ function Hero() {
               </p>
 
               <p className="mt-4 text-zinc-300 xxxsm:text-sm xxsm:text-base max-w-xl">
-                I build fast, elegant web experiences with modern stacks and a
-                focus on performance, accessibility, and delightful UX.
+                I'm a full-stack developer passionate about building web applications, real-time systems, and AI-powered products. I enjoy turning ideas into polished user experiences while engineering reliable backend systems that power them.
+
+                Currently focused on software architecture, testing practices, and AI-powered applications that solve real-world problems.
+
               </p>
 
               <div className="mt-8 flex xxxsm:flex-col xxsm:flex-row xxxsm:w-fit gap-3">
@@ -495,7 +497,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="pb-16 pt-4 md:pt-12 scroll-mt-28 sm:scroll-mt-36"
+      className="pb-16 scroll-mt-28 sm:scroll-mt-36"
     >
       <div className="container max-w-7xl px-6 md:px-8">
         <h2 className="font-display font-semibold text-3xl sm:text-4xl text-center mb-8">
@@ -555,7 +557,7 @@ function Projects() {
 const SKILL_CATEGORIES = [
   {
     title: "LANGUAGES",
-    skills: ["JavaScript (ES6+)", "C++", "HTML5", "CSS3"],
+    skills: ["JavaScript (ES6+)", "Python", "HTML5", "CSS3"],
   },
   {
     title: "FRONTEND DEVELOPMENT",
@@ -570,12 +572,12 @@ const SKILL_CATEGORIES = [
     skills: ["MongoDB", "Mongoose (ODM)", "Firebase", "Vercel", "Netlify"],
   },
   {
-    title: "DEVOPS & DESIGN TOOLS",
-    skills: ["Docker", "Git", "GitHub", "Postman", "Figma", "VS Code"],
+    title: "DEVOPS & TESTING",
+    skills: ["Docker", "Git", "GitHub", "Jest", "Supertest", "Playwright", "Postman", "VS Code"],
   },
   {
     title: "CORE ENGINEERING FUNDAMENTALS",
-    skills: ["DSA", "OOPs", "System Design"],
+    skills: ["DSA", "OOPs", "System Design", "DBMS"],
   },
 ];
 
@@ -829,7 +831,7 @@ export default function Index() {
         <Achievements />
         <Contact />
         <div className="h-[1px] w-[80%] mx-auto bg-gray-200"></div>
-        <footer className="pb-10 pt-4 text-sm sm:text-base text-center text-zinc-500">
+        <footer className="py-6 text-sm sm:text-base text-center text-zinc-500">
           © {new Date().getFullYear()} Priyanshu Singh Chauhan
         </footer>
       </motion.main>
