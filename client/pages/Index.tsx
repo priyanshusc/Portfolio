@@ -269,7 +269,7 @@ function Hero() {
               </h1>
 
               <p className="xxxsm:text-[14px] xxsm:text-sm md:text-base uppercase pb-2 xxxsm:tracking-[0.10em] xxsm:tracking-[0.15em] md:tracking-[0.2em] text-zinc-400">
-                WEB DEVELOPER
+                FULL STACK DEVELOPER
               </p>
 
               <p className="mt-4 text-zinc-300 xxxsm:text-sm xxsm:text-base max-w-xl">
