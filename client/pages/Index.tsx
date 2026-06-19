@@ -497,7 +497,8 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="pb-16 scroll-mt-28 sm:scroll-mt-36"
+      className="pb-16 pt-4 md:pt-12 scroll-mt-28 sm:scroll-mt-36"
+
     >
       <div className="container max-w-7xl px-6 md:px-8">
         <h2 className="font-display font-semibold text-3xl sm:text-4xl text-center mb-8">
