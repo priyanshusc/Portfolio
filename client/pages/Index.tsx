@@ -7,6 +7,8 @@ import {
   Mail,
   GraduationCap,
   BookOpen,
+  Youtube,
+  Play,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -20,7 +22,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { Project, PROJECTS } from "@/lib/data";
+import { Project, PROJECTS, YOUTUBE_VIDEOS } from "@/lib/data";
 import { useNavigate } from "react-router-dom";
 
 const NAV_LINKS = [
@@ -498,7 +500,6 @@ function Projects() {
     <section
       id="projects"
       className="pb-16 pt-4 md:pt-12 scroll-mt-28 sm:scroll-mt-36"
-
     >
       <div className="container max-w-7xl px-6 md:px-8">
         <h2 className="font-display font-semibold text-3xl sm:text-4xl text-center mb-8">
@@ -701,7 +702,7 @@ const ACHIEVEMENTS: Achievement[] = [
 
 function AchievementCard({ a }: { a: Achievement }) {
   return (
-    <div className="group rounded-2xl border border-white/10 bg-card/60 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-102 hover:shadow-neon-purple-light">
+    <div className="group rounded-2xl border border-white/10 bg-card/60 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-neon-purple-light">
       <div className="h-52 w-full overflow-hidden">
         <img src={a.image} alt={a.title} className="" />
       </div>
@@ -734,6 +735,72 @@ function Achievements() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {ACHIEVEMENTS.map((achievement) => (
             <AchievementCard key={achievement.title} a={achievement} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function YoutubeCard({ v }: { v: (typeof YOUTUBE_VIDEOS)[number] }) {
+  return (
+    <a
+      href={v.videoLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block rounded-2xl border border-white/10 bg-card/60 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-neon-purple-light"
+    >
+      <div className="relative h-56 overflow-hidden">
+        {/* Blurred Background Thumbnail - SCALES ON HOVER */}
+        <img
+          src={v.thumbnail}
+          alt=""
+          role="presentation"
+          className="absolute inset-0 h-full w-full object-cover blur-sm opacity-40 scale-105 transition-transform duration-700 ease-out group-hover:scale-110 pointer-events-none"
+        />
+
+        {/* Sharp Center Thumbnail - STAYS STATIC */}
+        <img
+          src={v.thumbnail}
+          alt={v.title}
+          className="relative z-10 h-full w-full object-contain pointer-events-none"
+        />
+
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 z-20 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        </div>
+
+        {/* Play button on hover */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="rounded-full bg-white/10 backdrop-blur-sm ring-1 ring-white/30 p-3">
+            <Play className="h-5 w-5 text-white fill-white" />
+          </div>
+        </div>
+      </div>
+
+      <div className="p-4">
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="font-semibold text-lg leading-snug">{v.title}</h3>
+          <Youtube className="size-5 text-red-500 shrink-0 mt-0.5 transition-colors group-hover:text-red-400" />
+        </div>
+        <p className="mt-2 text-sm text-zinc-400">{v.date}</p>
+      </div>
+    </a>
+  );
+}
+
+function LatestYoutube() {
+  return (
+    <section id="youtube" className="py-16 scroll-mt-28 sm:scroll-mt-36">
+      <div className="container max-w-6xl px-6 md:px-8">
+        <h2 className="font-display font-semibold text-3xl sm:text-4xl text-center mb-10">
+          Latest on YouTube
+        </h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {YOUTUBE_VIDEOS.map((v) => (
+            <YoutubeCard key={v.id} v={v} />
           ))}
         </div>
       </div>
@@ -788,9 +855,24 @@ function Contact() {
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=priyanshusinghchauhan40@example.com&su=Hello&body=I%20want%20to%20get%20in%20touch%20with%20you"
             aria-label="Email"
+            target="_blank"
             className="hover:text-white transition-colors"
           >
             <Mail className="md:h-[30px] md:w-[30px] xsm:h-[24px] xsm:w-[24px]" />
+          </a>
+          <a
+            href="https://www.youtube.com/@priyanshusc"
+            aria-label="Youtube"
+            target="_blank"
+            className="hover:text-white transition-colors"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className={`md:h-[30px] md:w-[30px] xsm:h-[24px] xsm:w-[24px]`}
+            >
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
           </a>
         </div>
       </div>
@@ -830,6 +912,7 @@ export default function Index() {
         <Skills />
         <Education />
         <Achievements />
+        <LatestYoutube />
         <Contact />
         <div className="h-[1px] w-[80%] mx-auto bg-gray-200"></div>
         <footer className="py-6 text-sm sm:text-base text-center text-zinc-500">
