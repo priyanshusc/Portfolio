@@ -74,7 +74,7 @@ export const PROJECTS: Project[] = [
     images: ["/mehfil.png", "/mehfil2.png"],
     stack: ["React", "Node.js", "Express.js", "MongoDB", "Cloudinary"],
     githubLink: "https://github.com/priyanshusc/Mehfil",
-    liveLink: "https://mehfil.onrender.com/",
+    // liveLink: "https://mehfil.vercel.app/",
     features: [
       "Dual-role system — Artists upload & manage music, Listeners discover & stream",
       "Persistent global audio player with uninterrupted playback across navigation",
@@ -183,5 +183,23 @@ export const PROJECTS: Project[] = [
       "Simple and intuitive UI for better user experience",
     ],
     category: "Client Work",
-  }
+  },
+];
+
+export type YoutubeVideo = {
+  id: string;
+  title: string;
+  thumbnail: string;
+  date: string;
+  videoLink: string;
+};
+
+export const YOUTUBE_VIDEOS: YoutubeVideo[] = [
+  {
+    id: "yt-1",
+    title: "Access Token vs Refresh Token",
+    thumbnail: "/yt1.jpg",
+    date: "Jul 03, 2026",
+    videoLink: "https://youtube.com/shorts/tmfWZ48BWgs?si=_Lj-5RlY3dW8cXXl",
+  },
 ];
