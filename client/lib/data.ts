@@ -204,7 +204,7 @@ export const YOUTUBE_VIDEOS: YoutubeVideo[] = [
   },
   {
     id: "yt-2",
-    title: "",
+    title: "New HTTP Method Query",
     thumbnail: "/yt2.webp",
     date: "Jul 05, 2026",
     videoLink: "https://youtube.com/shorts/b8p6-4e-4bs?si=1pZR2eY2yfSb_KSL",
