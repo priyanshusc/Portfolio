@@ -355,7 +355,7 @@ function Hero() {
                   <div className="w-full h-full rounded-full overflow-hidden relative group">
                     {/* Image */}
                     <img
-                      src="/profile.jpeg"
+                      src="/profile.webp"
                       alt="Priyanshu Singh Chauhan"
                       className="w-full h-full object-cover object-center"
                     />
@@ -682,19 +682,19 @@ type Achievement = {
 const ACHIEVEMENTS: Achievement[] = [
   {
     title: "Oracle Certified GenAI Professional",
-    image: "/Oracle.png",
+    image: "/Oracle.webp",
     href: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=E49232384E76C1B5B609A13DE64107E71FEDE88F27B5F24AC2FD806F0F4ECB86",
     issuer: "Certified by Oracle for Generative AI skills.",
   },
   {
     title: "AI and Data Scientist",
-    image: "/Oneroadmap.png",
+    image: "/Oneroadmap.webp",
     href: "https://oneroadmap.io/skills/ai-ds/certificate/CERT-B3E7D6BB",
     issuer: "Awarded by Oneroadmap",
   },
   {
     title: "Google Analytics Certification",
-    image: "/GoogleAnalytics.jpeg",
+    image: "/GoogleAnalytics.webp",
     href: "https://skillshop.credential.net/4c780f5e-5493-46ab-9d80-53b2287db4bb#acc.eDcIdays",
     issuer: "Awarded by Google for data analysis skills.",
   },
